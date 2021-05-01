@@ -62,7 +62,10 @@
 										</ul>
 									</div>
 									<p class="item-price"><strike>${{ ($device->price*15)/10 }}</strike> <b>${{ $device->price }}</b></p>
-									<a href="#" class="btn btn-primary">Add to Cart</a>
+									<form action="/eCommerce/addtocart" method="post" style="display: inline;"> @csrf
+                                        <input type="hidden" name="product_id" value="{{ $device->id }}">
+                                        <input  class="btn btn-primary add-to-card" type="submit" value="Add to card" name="add_to_card">
+                                    </form>
 								</div>						
 							</div>
 						</div>
